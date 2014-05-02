@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Comprobación de Numero Primo</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        
+        <div>Comprobación de Numero Primo</div>
+        <form id="frmvalidacion">
+            <input type="text" id="txtpractica" name="txtpractica" onblur="if(numerosPrimos(this.value)) alert('El numero no es Primo'); else alert ('El numero es Primo')">  
+            <input type="button" id="butValor" name="butValor" value="Comprobar Numero Primo" onclick="if(numerosPrimos(document.getElementById('txtpractica').value)) alert('El numero no es Primo'); else alert ('El numero es Primo')"></br> 
+            <a href="index.html"><h1>Clic Aquí para Limpiar o Borrar Campos.</h1></a><br>
+        </form>
+</html>
+<script>   
+    function numerosPrimos()
+    {
+        var numero=document.getElementById("txtpractica").value;
+        var divisor=2;      
+        while(numero>divisor){
+            if((numero%divisor)==0){
+                return true;           
+            }
+            divisor ++;
+        }        
+        return false;
+    }
+</script>
